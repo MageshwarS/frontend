@@ -1,0 +1,67 @@
+#requests{
+    background-color: #64CCC5;
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+   
+}
+div{
+    background-color: #64CCC5;
+    padding: 20px;
+  
+    border-radius: 15px;
+    margin: auto ;
+    margin-top: 27px;
+    
+    border: 1px solid black;
+    width: fit-content;
+
+}
+
+button{
+    padding: 5px;
+    margin: 3px;
+    color: rgb(254, 251, 251);
+    background-color: #ff1b68;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #ff1b68;
+    background-color: rgb(254, 251, 251);
+}
+
+div > #button{
+    margin: 2% 2% 2% 30%;
+}
+
+div > #book{
+    margin-left: 50%;
+}
+
+.button{
+    background-color: #053B50;
+    color:white;
+    align-self: center;
+    margin-left: 35%;
+    margin-top: 5%;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color:#EEEEEE ;
+    color: #053B50;
+}
+
+#modeOfTransport{
+    text-align: center;
+    border:0px;
+}

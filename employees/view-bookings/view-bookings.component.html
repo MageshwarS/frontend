@@ -1,0 +1,28 @@
+<app-employee-header *ngIf="employee.role!='Project Manager'"></app-employee-header>
+<app-manager-header *ngIf="employee.role=='Project Manager'"></app-manager-header>
+<h2>Travel Details</h2>
+<table border="1px" rules="all">
+    <tr>
+        <th>Boarding point</th>
+        <th>Destination</th>
+        <th>Mode of Transportation</th>
+        <th>Hotel Name</th>
+        <th colspan="2">Check In Time</th>
+        <th colspan="2">Check Out Time</th>
+        <th>Ticket</th>
+    </tr>
+    <tr *ngFor="let booking of bookings">
+        <td>{{ booking.travelRequests.boardingPoint }}</td>
+        <td>{{ booking.travelRequests.destination}}</td>
+        <td>{{booking.travelRequests.transportationMode}}</td>
+        <td>{{booking.hotelName}}</td>
+        <td>{{booking.checkInTime.split('T')[0]}}</td>
+        <td>{{booking.checkInTime.split('T')[1]}}</td>
+        <td>{{booking.checkOutTime.split('T')[0]}}</td>
+        <td>{{booking.checkOutTime.split('T')[1]}}</td>
+        <td><a target="_blank" href="http://localhost:8081/bookingsapi/booking/download/{{booking.bookingId}}">Dowload</a></td>
+        <!-- <td><a href="manager/request-details/{{travelrequest.travelRequestId}}">View Details</a></td> -->
+    </tr>
+</table>
+
+<app-employee-footer></app-employee-footer>

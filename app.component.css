@@ -1,0 +1,58 @@
+
+
+.button{
+    background-color: #0e4f1f;
+    color: white;
+    font-family: inherit;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1.5px solid #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    
+}
+
+.button:active,
+.button:hover{
+    background-color: white;
+    color: #0e4f1f;
+    cursor:pointer;
+    
+}
+
+
+.main-footer {
+    background-color: #000000;
+    padding: 10PX;
+    margin-top: 6.5%;
+}
+
+.main-footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main-footer__link {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.main-footer__link a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+    color: #ccc;
+}
+#login{
+    text-decoration: none;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    vertical-align: middle;
+}

@@ -1,0 +1,23 @@
+<app-agent-header></app-agent-header>
+<h2>{{ agentApproval }} Requests</h2>
+<table border="1px" rules="all">
+    <tr>
+        <th>Boarding Point</th>
+        <th>Destination</th>
+        <th>From date</th>
+        <th>To date</th>
+        <th>Mode of Transport</th>
+        <th>Manager Approval</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let travelrequest of travelRequests">
+        <td>{{travelrequest.boardingPoint}}</td>
+        <td>{{travelrequest.destination}}</td>
+        <td>{{travelrequest.fromDate}}</td>
+        <td>{{travelrequest.toDate}}</td>
+        <td>{{travelrequest.transportationMode}}</td>
+        <td>{{travelrequest.managerApproval}}</td>
+        <td><a href="agent/request-details/{{travelrequest.travelRequestId}}">View Details</a></td>
+    </tr>
+</table>
+<app-employee-footer></app-employee-footer>

@@ -1,0 +1,38 @@
+#requests{
+    background-color: #64CCC5;
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: fit-content;
+}
+div{
+    background-color: #64CCC5;
+
+}
+
+button{
+    padding: 5px;
+    margin: 3px;
+    color: rgb(254, 251, 251);
+    background-color: #ff1b68;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #ff1b68;
+    background-color: rgb(254, 251, 251);
+}
+
+div > #button{
+    margin: 0% 2% 2% 38%;
+}
+
+div > #book{
+    margin-left: 50%;
+}

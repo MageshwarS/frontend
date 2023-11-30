@@ -1,0 +1,36 @@
+<app-employee-header *ngIf="employee.role!='Project Manager' && employee.role!='Director'"></app-employee-header>
+<app-manager-header *ngIf="employee.role=='Project Manager'"></app-manager-header>
+
+<div [hidden]="flag" >
+    <h2 >Travel Request Form</h2>
+    <form (ngSubmit)="submit()">
+        <label>Boarding Point </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="boardingPoint" [(ngModel)]="travelRequest.boardingPoint">
+            <option *ngFor="let opt of options" value="{{opt}}"> {{opt}} </option>
+        </select><br><br>
+        <label>Destination </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+        <select name="destination" [(ngModel)]="travelRequest.destination">
+            <option *ngFor="let opt of options" value="{{opt}}"> {{opt}} </option>
+            
+        </select><br><br>
+        <label>From Date </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="fromDate" type="date" [(ngModel)]="travelRequest.fromDate"><br><br>
+        <label>To Date </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+        <input name="toDate" type="date" [(ngModel)]="travelRequest.toDate"><br><br>
+        <label>Mode of Transport </label>&nbsp;
+        <select name="modeOfTransport" [(ngModel)]="travelRequest.transportationMode">
+            <option *ngFor="let opt of transports" value="{{opt}}"> {{opt}} </option>
+        </select><br><br>
+        <label *ngIf="travelRequest.destination=='Dubai'">Forex in AED</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+        <input *ngIf="travelRequest.destination=='Dubai'" name="Forex" type="number" [(ngModel)]="travelRequest.forex"><br><br>
+        <input class="button" type="submit" value="Send Request">
+    </form>
+    
+</div>
+
+<div [hidden]="!flag">
+    <p>Your request has been added successfully</p>
+    <button class="button" (click)="goToHome()" >Back to Home  </button>
+</div>
+
+<app-employee-footer></app-employee-footer>

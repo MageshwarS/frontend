@@ -1,0 +1,64 @@
+<app-employee-header *ngIf="employee.role!='Project Manager' && travelRequests.employees.role!='Director'"></app-employee-header>
+<app-manager-header *ngIf="employee.role=='Project Manager'"></app-manager-header>
+
+
+<!-- ONLY FOR EMPLOYEES, MANAGERS, DIRECTOR -->
+
+<div id="requests" [hidden]="flag">
+    <label for="Boarding Point">Boarding Point &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label> 
+        {{travelRequests.boardingPoint}} 
+        <br> <br> 
+    <label for="Destination">Destination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+        {{travelRequests.destination}}
+        <br> <br> 
+     <label for="From Date">From Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+        {{travelRequests.fromDate}}
+        <br> <br> 
+     <label for="To Date">To Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+        {{travelRequests.toDate}}
+
+    <br> <br> 
+    <label for="Transportation Mode">Transportation Mode &nbsp;&nbsp; :</label>
+      {{travelRequests.transportationMode}}
+   <br> <br>
+
+   <label for="Manager Approval" >Manager Approval &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :{{travelRequests.managerApproval}}</label>
+ <br> <br> 
+
+   <label for="Agent Approval">Agent Approval  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+  {{travelRequests.agentApproval}}
+
+   
+
+   <br> <br>
+ <div *ngIf="travelRequests.directorApproval=='rejected' || travelRequests.directorApproval=='pending'">
+    <label for="Director Approval">Director Approval &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{ travelRequests.directorApproval}}</label>
+    
+ </div>
+ <br>
+ <div *ngIf="(travelRequests.directorApproval=='rejected' || travelRequests.directorApproval=='pending') && travelRequests.comments!=null">
+   <label for="comments">Comments &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :{{travelRequests.comments}}</label>
+   
+</div>
+ 
+<!-- <label for="Documant Status" *ngIf="travelRequests.agentApproval!='pending' && travelRequests.directorApproval=='approved'">Documant Status  :{{travelRequests.documentStatus}}</label> -->
+
+<label for="Document" *ngIf="travelRequests.documentStatus=='requested'">
+   {{(travelRequests.boardingPoint=='Dubai' || travelRequests.destination=='Dubai') ? 'Upload Passport' : 'Upload Aadhar card'}} :<input type="file" (change)="onChange($event)">
+</label>
+
+<button class="button" *ngIf="travelRequests.documentStatus=='requested'" (click)="uploadDocument()">Upload</button>
+
+<!-- <div *ngIf="employee.role=='Project Manager' && travelRequests.employees.employeeId!=employeeId">
+   <button (click)="updateapprovalbyManager('approved')">Approve</button>
+   <button (click)="updateapprovalbyManager('rejected')">Reject</button>
+</div> -->
+
+
+</div>
+
+<div id="requests" [hidden]="!flag">
+<h3> {{message}}</h3>
+</div>
+
+<app-employee-footer></app-employee-footer>

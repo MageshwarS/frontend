@@ -1,0 +1,18 @@
+#requests{
+    background-color: #55b3e6;
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-top: 30px;
+}
+
+.button{
+    background-color: #053B50;
+    color:white;
+    align-self: center;
+    margin: auto;
+}

@@ -1,0 +1,27 @@
+<app-director-header></app-director-header>
+<h2>{{ directorApproval }} Requests</h2>
+
+<table border="1px" rules="all">
+    <tr>
+        <th>Employee Name</th>
+        <th>Current Project</th>
+        <th>Boarding Point</th>
+        <th>Destination</th>
+        <th>From date</th>
+        <th>To date</th>
+        <th>Mode of Transport</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let travelrequest of travelRequests">
+        <td>{{ travelrequest.employees.employeeName}}</td>
+        <td>{{ travelrequest.employees.projectName}}</td>
+        <td>{{travelrequest.boardingPoint}}</td>
+        <td>{{travelrequest.destination}}</td>
+        <td>{{travelrequest.fromDate}}</td>
+        <td>{{travelrequest.toDate}}</td>
+        <td>{{travelrequest.transportationMode}}</td>
+        <td><a href="director/request-details/{{travelrequest.travelRequestId}}">View Details</a></td>
+    </tr>
+</table>
+
+<app-employee-footer></app-employee-footer>

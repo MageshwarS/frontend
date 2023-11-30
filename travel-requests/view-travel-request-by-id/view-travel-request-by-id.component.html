@@ -1,0 +1,26 @@
+<app-employee-header *ngIf="employee.role!='Project Manager' && employee.role!='Director'"></app-employee-header>
+<app-manager-header *ngIf="employee.role=='Project Manager'"> </app-manager-header>
+<div>
+    <h2>All Requests</h2>
+    <table border="1px" rules="all">
+        <tr>
+            <th>Boarding Point</th>
+            <th>Destination</th>
+            <th>From date</th>
+            <th>To date</th>
+            <th>Request Status</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let travelrequest of travelrequests">
+            <td>{{travelrequest.boardingPoint}}</td>
+            <td>{{travelrequest.destination}}</td>
+            <td>{{travelrequest.fromDate}}</td> 
+            <td>{{travelrequest.toDate}}</td>
+            <td>{{travelrequest.agentApproval !='pending' && travelrequest.directorApproval=='approved' ? 'Approved' : travelrequest.directorApproval=='rejected' ? 'Rejected' : 'Pending'}}</td>
+            <td><a href="view-request/{{travelrequest.travelRequestId}}">{{travelrequest.documentStatus=='requested' ? 'Upload Document' :'View Details'}}</a></td>
+        </tr>
+    </table>
+</div>
+
+
+<app-employee-footer></app-employee-footer>

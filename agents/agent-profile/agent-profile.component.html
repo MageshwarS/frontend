@@ -1,0 +1,9 @@
+<app-agent-header></app-agent-header>
+<div  class="backdesign">
+    <h2 style="color: #000000; background-color: #EEEEEE;  padding: 10px; margin: 0px; border-radius: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{agent.agentName}}</h2>
+    <!-- <hr> -->
+    <br><br>
+      <h3  [hidden]="email" (mouseenter)="email=true" style="color: #EEEEEE; padding: 10px; margin: 0;">Email</h3>
+      <h3 [hidden]="!email" (mouseleave)="email=false" style="background-color: #64CCC5; padding: 15px; margin: 0;" >{{agent.agentEmail}}</h3>
+    </div>
+<app-employee-footer></app-employee-footer>

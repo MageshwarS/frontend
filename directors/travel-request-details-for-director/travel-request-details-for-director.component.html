@@ -1,0 +1,75 @@
+<app-director-header *ngIf="employee.role=='Director'"></app-director-header>
+
+
+<div id="requests" [hidden]="flag">
+    <label for="Employee Name">Employee Name
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.employees.employeeName}}
+    <br> <br>
+    <label for="Current Project"> Current Project
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.employees.projectName}}
+    <br> <br>
+    <label for="Role">Role
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.employees.role}}
+    <br> <br>
+    <label for="Email Address">Email Address
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.employees.email}}
+    <br> <br>
+    <label for="Boarding Point">Boarding Point
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.boardingPoint}}
+    <br> <br>
+    <label
+        for="Destination">Destination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.destination}}
+    <br> <br>
+    <label for="From Date">From Date
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.fromDate}}
+    <br> <br>
+    <label for="To Date">To Date
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.toDate}}
+
+    <br> <br>
+    <label for="Transportation Mode">Transportation Mode &nbsp;&nbsp; :</label>
+    {{travelRequests.transportationMode}}
+    <br> <br>
+
+    <!-- <label for="International travel allowed">international Travel Allowed &nbsp;&nbsp; :</label>
+    {{travelRequests.employees.slab.internationalTravelAllowed}}
+    <br> <br> -->
+    <!-- <label for="Manager Approval" >Manager Approval &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :</label>
+    {{travelRequests.managerApproval}}
+    <br> <br>  -->
+
+    <label for="Agent Approval">Agent Approval
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    {{travelRequests.agentApproval}}
+    <br> <br>
+    <label for="comments" >Agent's Comment
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+    <span style="color: red;">{{travelRequests.comments}}</span>
+    <br> <br>
+
+    
+    
+
+    <!-- <label for="Director Approval">Director Approval &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</label>
+    {{travelRequests.directorApproval}} -->
+
+    <!-- <label for="Documant Status">Documant Status  :</label>
+{{travelRequests.documentStatus}} -->
+
+    <div *ngIf="travelRequests.directorApproval=='pending'">
+        <button (click)="updateapprovalbyDirector('approved')">Approve</button>
+        <button (click)="updateapprovalbyDirector('rejected')">Reject</button>
+    </div>
+</div>
+<div id="requests" [hidden]="!flag">
+    <h2>{{message}}</h2>
+</div>
+<app-employee-footer></app-employee-footer>

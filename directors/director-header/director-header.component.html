@@ -1,0 +1,53 @@
+<header class="main-header" >
+    <div>
+        <a class="main-header__brand">
+            Employee Travel Portal
+        </a>
+    </div><nav class="main-nav">
+        <ul class="main-nav__items">
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="profile/{{employeeId}}">Profile</a>
+            </li>
+
+            <!-- <select name="view-requests" id="">
+                <option value="Pending">Pending Requests</option>
+                <option value="Approved">Approved Request</option>
+                <option value="Rejected">Rejected Requests</option>
+            </select> -->
+            <!-- <li class="main-nav__item main-nav__item__cta">
+                <a href="manager/view-requests/{{Pending}}">Employee Requests</a>
+            </li> -->
+            <div class="dropdown" (mouseenter)="employeeRequests=true" (mouseleave)="employeeRequests=false">
+                <li class="main-nav__item main-nav__item__cta" > 
+                  <i class="fa fa-caret-down"></i>
+                  <a >Employee Requests</a>
+                </li>
+                <div class="dropdown-content" id="myDropdown" *ngIf="employeeRequests">
+                  <a href="director/view-requests/{{Pending}}">Pending Requests</a>
+                  <a href="director/view-requests/{{Approved}}">Approved Requests</a>
+                  <a href="director/view-requests/{{Rejected}}">Rejected Requests</a>
+                </div>
+                </div>
+                <div class="dropdown" (mouseenter)="managerRequests=true" (mouseleave)="managerRequests=false">
+                    <li class="main-nav__item main-nav__item__cta" > 
+                      <i class="fa fa-caret-down"></i>
+                      <a  >Manager Requests</a>
+                    </li>
+                    <div class="dropdown-content" id="myDropdown" *ngIf="managerRequests">
+                      <a href="manager/view-requests/{{Pending}}">Pending Requests</a>
+                      <a href="manager/view-requests/{{Approved}}">Approved Requests</a>
+                      <a href="manager/view-requests/{{Rejected}}">Rejected Requests</a>
+                    </div>
+                    </div>
+            <!-- <li class="main-nav__item main-nav__item__cta">
+                <a href="manager/view-requests/{{Approved}}">Manager Requests</a>
+            </li> -->
+            <!-- <li class="main-nav__item main-nav__item__cta">
+                <a href="manager/view-requests/{{Rejected}}">Rejected Requests</a>
+            </li> -->
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="employee/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+  </header>

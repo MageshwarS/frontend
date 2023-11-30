@@ -1,0 +1,15 @@
+div{
+    background-color: #64CCC5;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button{
+    background-color: #053B50;
+    color:white;
+    align-self: center;
+    margin: auto;
+}

@@ -1,0 +1,32 @@
+table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  div{
+    margin-top: 30px;
+  }
+  table{
+    
+   background-color: #ccc;
+   text-align: center;
+   margin: auto;
+   width: 100%;
+   padding: 10px;
+   border: 2px solid black;
+  }
+  th{
+   color: #000000;
+   background:#176B87;
+   color: #EEEEEE;
+}
+tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ 
+ tr:hover {
+   background-color: #63bbd8;
+ }
+  td,th{
+   border: 2px solid black;
+   padding: 10px;
+  }

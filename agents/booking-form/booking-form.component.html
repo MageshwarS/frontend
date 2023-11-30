@@ -1,0 +1,52 @@
+<app-agent-header></app-agent-header>
+<div id="request" [hidden]="flag" >
+    
+    <form id="request" (ngSubmit)="submit()">
+        <h2 >Booking Form</h2>
+        <label>Hotel Name  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="hotel-name" [(ngModel)]="booking.hotelName">
+            <option *ngFor="let opt of hotels" value="{{opt}}"> {{opt}} </option>
+        </select><br><br>
+
+        <label>Hotel Location(link) </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="hotel-location" type="text" [(ngModel)]="booking.hotelLocation"><br><br>
+
+        <label>Check in time  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="fromDate" type="datetime-local" [(ngModel)]="booking.checkInTime"><br><br>
+
+        <label>Check out Time  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="toDate" type="datetime-local" [(ngModel)]="booking.checkOutTime"><br><br>
+
+        <label *ngIf="booking.travelRequests.transportationMode=='Flight'">Flight Ticket  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input *ngIf="booking.travelRequests.transportationMode=='Flight'" type="text" name="flight" [(ngModel)]="booking.flightTicket">
+
+
+        <label *ngIf="booking.travelRequests.transportationMode=='Bus'">Bus Ticket  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input *ngIf="booking.travelRequests.transportationMode=='Bus'" type="text" name="bus" [(ngModel)]="booking.busTicket" >
+
+        <label *ngIf="booking.travelRequests.transportationMode=='Train'">Train Ticket &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+        <input *ngIf="booking.travelRequests.transportationMode=='Train'" type="text" name="train" [(ngModel)]="booking.trainPnr">
+        
+        <br><br>
+
+        <label>Mode of Transport  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input readonly disabled="true" id="modeOfTransport" type="text" name="Transport" [(ngModel)]="booking.travelRequests.transportationMode"><br><br>
+        <label for="Ticket">Upload Ticket</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="file" (change)="onChange($event)">
+        <input class="button" type="submit" value="Book">
+    </form> 
+    
+ </div>
+
+ <div id="request" [hidden]="!flag">
+    <p [hidden]="mailFlag">{{travelRequest.comments }} successfully!</p>
+    <p [hidden]="!mailFlag">Mail Sent successfully!</p>
+    <img style="width: 150px;" *ngIf="sendMailClicked" src="https://acumbamail.com/blog/wp-content/uploads/2015/06/ventajas-gif-email.gif" alt="done">
+    <br>
+    <button [hidden]="mailFlag" (click)="sendMail()">Send Mail</button>
+    <button [hidden]="!mailFlag" (click)="back()">Go Back</button>
+ </div>
+
+ 
+
+<app-employee-footer></app-employee-footer>

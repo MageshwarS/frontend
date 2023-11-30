@@ -1,0 +1,32 @@
+#requests{
+    background-color: #64CCC5;
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-bottom: 60px;
+    width: fit-content;
+}
+div{
+    margin: auto;
+    margin-left: 28%;
+}
+
+button{
+    margin-top: 0px;
+    padding: 5px;
+    margin: 3px;
+    color: rgb(254, 251, 251);
+    background-color: #ff1b68;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #ff1b68;
+    background-color: rgb(254, 251, 251);
+}
