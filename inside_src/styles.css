@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    /* background: linear-gradient(to bottom, #d3d2df, #302b63, #24243e); */
+    background-color: #EEEEEE;
+
+}
+
+.main-footer {
+    background-color: #000000;
+    padding: 10PX;
+    /* margin-top: 2.5%; */
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
